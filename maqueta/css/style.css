@@ -1,0 +1,207 @@
+:root{
+    --fondo-body: #0084ff;
+    --fondo-header: #6c6c6c;
+    --fondo-title: rgba(0, 0, 0, 0.815);
+    --fondo-main: rgba(1, 31, 114, 0.87);
+    --fondo-nav: rgba(0, 0, 0, 0.87);
+    --fondo-barra: rgba(11, 212, 4, 0.87);
+
+    /* FONTS */
+    --font: #ffffff;
+    --font1: #000000;
+    --font-text: #000000;
+    --font-text1: #ffffff;
+
+    /* SOMBRAS */
+    --sombra-title: rgb(0, 0, 0);
+    --sombra-title1: rgb(0, 0, 0);
+    --sombra-linea:rgb(0, 0, 0);
+    --sombra-linea2:rgb(0, 65, 204);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(fondo.jpg);
+    min-height: 170vh;
+    margin: auto;
+    padding: 10px;
+
+}
+/* INICIO HEADER */
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background-image: url(ayla-verschueren-Qvbr5Uxgz_Q-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    box-shadow: 0px 0px 30px 2px var(--sombra-title);
+    border-bottom: 4px solid var(--sombra-linea);
+}
+
+.p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font);
+    border-radius: 5px;
+    font-family:"Yusei Magic", sans-serif;
+    border-radius: 10px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-shadow: 15px 15px 20px var(--sombra-title1);
+    
+}
+.p1{
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--font1);
+    letter-spacing: 1px;
+}
+span{
+    color: rgb(0, 84, 209);
+}
+
+/* INICIO NAV */
+.bar-nav{
+    display: flex;
+    background:var(--fondo-nav);
+    box-shadow: 0 0 40px 20px var(--sombra-linea);
+    border-bottom: 1px solid var(--sombra-linea2);
+    
+}
+ul{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+a{
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--font-text1);
+    text-decoration: none; 
+}
+
+/* INICIO MAIN */
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid;
+    
+    background: var(--fondo-main);
+}
+.main-box{
+    width:80%;
+    height: auto;
+
+    color:var(--font-text1);
+    text-align: justify;
+    padding: 10px;
+}
+h2{
+    font-size: 45px;
+    color: var(--font-text1);
+    text-shadow: 0 0 10px var(--font);
+    margin-bottom: 20px;
+}
+.img2{
+    width: 200px;
+    height: 90%;
+    border-radius: 100%;
+    box-shadow: 0 0 30px 10px var(--sombra-linea);
+}
+
+/* INICIO BARRA LATERAL */
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    background: var(--fondo-barra);
+    justify-content: space-around; 
+    box-shadow: 0px 0px 30px 2px var(--sombra-linea);
+}
+.ofertas{
+    color: var(--font);
+    text-shadow: 0 0 10px var(--font);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE  */
+
+.box-conteiner > *{
+    text-align: center;
+    width: auto;
+    padding: 10px;
+}
+.box-conteiner{
+    display: grid;
+    gap: 20px;
+    grid-template:
+    "logo" 300px
+    "bar-nav" 40px
+    "side-bar" auto
+    "main" auto
+    "footer" 80px
+    ;
+    .logo{
+        grid-area: logo;
+    }
+    .img{
+        grid-area: img;
+        margin-right: 30px;
+        max-width: 100px;
+    }
+    .p{
+        grid-area: p;
+        width: 450px;
+        padding: 10px;
+        height: 40%;
+        font-size: 120px;
+    }
+    .bar-nav{
+        grid-area: bar-nav;
+    }
+    .side-bar{
+        grid-area: side-bar;
+    }
+    .main{
+        grid-area: main;
+    }
+    .footer{
+        grid-area: footer;
+        color: var(--font);
+        background: rgba(0, 0, 0, 0.884);
+    }
+    @media (min-width:768px) {
+        grid-template:
+        "logo" 250px
+        "bar-nav" 70px
+        "side-bar" auto
+        "main" auto
+        "footer"60px;
+    }
+    @media (min-width:992px) {
+        grid-template:
+        "logo logo logo" 560px
+        "bar-nav bar-nav bar-nav" 45px
+        "main main side-bar "auto
+        "footer footer footer" 100px/
+        200px auto 200px;
+    }
+}
